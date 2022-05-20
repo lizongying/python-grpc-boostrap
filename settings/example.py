@@ -1,0 +1,2 @@
+HOST = '[::]:9000'
+MAX_WORKERS = 10

@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+//ping code
+message PingCodeRequest {
+    string request_id = 1;
+}
+
+
+message PingCodeData {
+    int32 code = 1;
+}
+
+
+message PingCodeResponse {
+    string request_id = 1;
+    optional PingCodeData data = 2;
+}
+
+//ping message
+message PingMessageRequest {
+    string request_id = 1;
+}
+
+
+message PingMessageData {
+    string message = 1;
+}
+
+
+message PingMessageResponse {
+    string request_id = 1;
+    optional PingMessageData data = 2;
+}
+
+
+service PingService {
+    rpc PingCode (PingCodeRequest) returns (PingCodeResponse) {};
+    rpc PingMessage (PingMessageRequest) returns (PingMessageResponse) {};
+}
